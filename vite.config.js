@@ -11,7 +11,14 @@ export default defineConfig({
         raycasting: resolve(__dirname, 'raycasting.html'),
         raymarching: resolve(__dirname, 'raymarching.html'),
         raytracing: resolve(__dirname, 'raytracing.html'),
+        login: resolve(__dirname, 'login.html'),
+        admin: resolve(__dirname, 'profile.html')
       }
+    }
+  },
+  server: {
+    proxy: {
+      '/api': 'http://localhost:3000'
     }
   }
 });

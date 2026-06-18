@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Вход — Graphics Time Machine</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .login-box {
+      max-width: 400px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background: var(--surface);
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .login-box h2 { margin-bottom: 1.5rem; }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label { display: block; margin-bottom: 0.3rem; }
+    .form-group input {
+      width: 100%;
+      padding: 0.5rem;
+      background: var(--bg);
+      border: 1px solid #444;
+      color: var(--text);
+      border-radius: 4px;
+    }
+    .btn {
+      padding: 0.6rem 1.2rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .btn-primary { background: var(--accent); color: white; }
+    .btn-secondary { background: transparent; color: var(--text); border: 1px solid var(--text); margin-left: 0.5rem; }
+    .message { margin-top: 1rem; font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">Graphics Time Machine</a></h1>
+    <p>Вход в систему</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="/">Главная</a></li>
+      <li><a href="/pong.html">2D: Pong</a></li>
+      <li><a href="/raster.html">Растеризация</a></li>
+      <li><a href="/raycasting.html">2.5D: Ray Casting</a></li>
+      <li><a href="/raymarching.html">Ray Marching</a></li>
+      <li><a href="/raytracing.html">Ray Tracing</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="login-box">
+      <h2>Вход / Регистрация</h2>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="username">Логин</label>
+          <input type="text" id="username" required />
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" required />
+        </div>
+        <div style="display: flex; align-items: center;">
+          <button type="submit" class="btn btn-primary">Войти</button>
+          <button type="button" id="registerBtn" class="btn btn-secondary">Регистрация</button>
+        </div>
+        <div id="message" class="message"></div>
+      </form>
+    </div>
+  </main>
+  <footer>
+    <p>Учебный проект, 2026</p>
+  </footer>
+  <script src="/js/auth.js"></script>
+</body>
+</html>

@@ -1,36 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Растеризация — Graphics Time Machine</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
-  <header>
-    <h1><a href="/">Graphics Time Machine</a></h1>
-    <p>Эволюция компьютерной графики: от Pong до трассировки лучей</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Растеризация — Graphics Time Machine</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Graphics Time Machine</a></h1>
+      <p>Эволюция компьютерной графики: от Pong до трассировки лучей</p>
+      <div id="auth-status" style="position: absolute; top: 1rem; right: 1rem;"></div>
+    </header>
 
-  <nav>
-    <ul>
-      <li><a href="/">Главная</a></li>
-      <li><a href="/pong.html">2D: Pong</a></li>
-      <li><a href="/raster.html">Растеризация</a></li>
-      <li><a href="/raycasting.html">2.5D: Ray Casting</a></li>
-      <li><a href="/raymarching.html">Ray Marching</a></li>
-      <li><a href="/raytracing.html">Ray Tracing</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/pong.html">2D: Pong</a></li>
+        <li><a href="/raster.html">Растеризация</a></li>
+        <li><a href="/raycasting.html">2.5D: Ray Casting</a></li>
+        <li><a href="/raymarching.html">Ray Marching</a></li>
+        <li><a href="/raytracing.html">Ray Tracing</a></li>
+      </ul>
+    </nav>
 
-<main>
-    <h2>Растеризация: вращающийся треугольник</h2>
-    <p>Игра на Canvas, демонстрирующая спрайтовую графику и простой геймплей.</p>
-    <p><em>Демка появится здесь.</em></p>
-  </main>
+    <main>
+      <h2>Растеризация: вращающийся треугольник</h2>
+      <p>
+        Игра на Canvas, демонстрирующая спрайтовую графику и простой геймплей.
+      </p>
+      <p><em>Демка появится здесь.</em></p>
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+      <article>
+        <h2>Растеризация — как треугольники становятся пикселями</h2>
+        <p>
+          <strong>История:</strong> Конец 80-х — начало 90-х. Компьютеры
+          становятся мощнее, и разработчики хотят настоящего 3D. Doom (1993) и
+          Quake (1996) показали, что можно бегать по трёхмерным коридорам и
+          стрелять в монстров. Секрет — растеризация. Видеокарты (начиная с
+          Voodoo Graphics) научились быстро превращать геометрические фигуры
+          (треугольники) в цветные пиксели на экране. Сегодня без растеризации
+          не работает ни одна 3D-игра.
+        </p>
+        <p>
+          <strong>Как работает (алгоритм):</strong> Представьте, что у вас есть
+          трёхмерная модель персонажа, состоящая из тысяч треугольников. Чтобы
+          нарисовать её на плоском экране, нужно выполнить несколько шагов.
+          Сначала каждый треугольник поворачивается и перемещается в
+          соответствии с положением камеры (видовое преобразование). Затем
+          применяется перспективная проекция — дальние предметы становятся
+          меньше. После этого для каждого треугольника определяется, какие
+          пиксели экрана он покрывает, и они закрашиваются нужным цветом (это и
+          есть растеризация). В современных GPU этот конвейер работает аппаратно
+          за доли миллисекунды.
+        </p>
+        <p>
+          <strong>Что показано на демонстрации:</strong> В нашем примере мы
+          сами, вручную (на процессоре, без WebGL), проецируем треугольник,
+          вращаем его и освещаем. Это простой, но
+          наглядный способ увидеть, как создаются трёхмерные объекты. Вы
+          наблюдаете «механику» растеризации в действии.
+        </p>
+      </article>
+    </main>
 
-  <footer>
-    <p>Учебный проект, 2026</p>
-  </footer>
-</body>
+    <footer>
+      <p>Учебный проект, 2026</p>
+    </footer>
+    <script src="/js/auth-check.js"></script>
+    <script src="/js/counter.js"></script>
+    <script src="/js/raster.js"></script>
+  </body>
 </html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Личный кабинет — Graphics Time Machine</title>
+  <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .profile-container {
+      max-width: 700px;
+      margin: 2rem auto;
+      background: var(--surface);
+      padding: 2rem;
+      border-radius: 8px;
+    }
+    .stats-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .stats-table th, .stats-table td {
+      padding: 0.5rem;
+      border-bottom: 1px solid #444;
+    }
+    .logout-btn {
+      background: transparent;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 0.3rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">🕹️ Graphics Time Machine</a></h1>
+    <p>Личный кабинет</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="/">Главная</a></li>
+      <li><a href="/pong.html">2D: Pong</a></li>
+      <li><a href="/raster.html">Растеризация</a></li>
+      <li><a href="/raycasting.html">2.5D: Ray Casting</a></li>
+      <li><a href="/raymarching.html">Ray Marching</a></li>
+      <li><a href="/raytracing.html">Ray Tracing</a></li>
+    </ul>
+  </nav>
+  <main>
+    <div class="profile-container">
+      <h2>Личный кабинет</h2>
+      <p>Здравствуйте, <strong id="username-display"></strong>! <button id="logoutBtn" class="logout-btn">Выйти</button></p>
+      <div id="stats">Загрузка...</div>
+    </div>
+  </main>
+  <footer>
+    <p>Учебный проект, 2026</p>
+  </footer>
+  <script src="/js/profile.js"></script>
+</body>
+</html>

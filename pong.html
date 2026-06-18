@@ -1,36 +1,75 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2D: Pong — Graphics Time Machine</title>
-  <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
-  <header>
-    <h1><a href="/">Graphics Time Machine</a></h1>
-    <p>Эволюция компьютерной графики: от Pong до трассировки лучей</p>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2D: Pong — Graphics Time Machine</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><a href="/">Graphics Time Machine</a></h1>
+      <p>Эволюция компьютерной графики: от Pong до трассировки лучей</p>
+      <div id="auth-status" style="position: absolute; top: 1rem; right: 1rem;"></div>
+    </header>
 
-  <nav>
-    <ul>
-      <li><a href="/">Главная</a></li>
-      <li><a href="/pong.html">2D: Pong</a></li>
-      <li><a href="/raster.html">Растеризация</a></li>
-      <li><a href="/raycasting.html">2.5D: Ray Casting</a></li>
-      <li><a href="/raymarching.html">Ray Marching</a></li>
-      <li><a href="/raytracing.html">Ray Tracing</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/pong.html">2D: Pong</a></li>
+        <li><a href="/raster.html">Растеризация</a></li>
+        <li><a href="/raycasting.html">2.5D: Ray Casting</a></li>
+        <li><a href="/raymarching.html">Ray Marching</a></li>
+        <li><a href="/raytracing.html">Ray Tracing</a></li>
+      </ul>
+    </nav>
 
-<main>
-    <h2>2D: Классический Pong</h2>
-    <p>Игра на Canvas, демонстрирующая спрайтовую графику и простой геймплей.</p>
-    <p><em>Демка появится здесь.</em></p>
-  </main>
+    <main>
+      <h2>2D: Классический Pong</h2>
+      <p>
+        Игра на Canvas, демонстрирующая спрайтовую графику и простой геймплей.
+      </p>
+      <p><em>Демка появится здесь.</em></p>
+      <canvas id="gameCanvas" width="800" height="600"></canvas>
+      <article>
+        <h2>Pong (2D-графика) — как всё начиналось</h2>
+        <p>
+          <strong>История:</strong> 1972 год, компания Atari, молодые инженеры
+          Нолан Бушнелл и Ал Олкорн создают игру, которая навсегда изменит мир
+          развлечений. Pong — это просто: две ракетки, мячик, чёрно-белый экран.
+          Но именно эта игра положила начало индустрии видеоигр. В те времена не
+          было мощных видеокарт, спрайтов или текстур — только аппаратная логика
+          и телевизионная развёртка. Тем не менее, Pong содержал в себе все
+          ключевые элементы, которые мы видим в современных играх: игровой цикл,
+          коллизии, отскоки, счёт очков.
+        </p>
+        <p>
+          <strong>Как работает (простым языком):</strong> Представьте себе
+          пустой холст (Canvas). 60 раз в секунду программа полностью
+          перерисовывает экран: стирает всё, рисует ракетки в новых позициях (в
+          зависимости от нажатых клавиш) и передвигает мяч на несколько
+          пикселей. Перед перемещением проверяется, не врезался ли мяч в границу
+          поля или в ракетку. Если да — меняем направление. Это называется
+          «игровой цикл» (game loop). В современных браузерах так работают все
+          анимации и 2D-игры на Canvas.
+        </p>
+        <p>
+          <strong>Что показано на демонстрации:</strong> Вы видите классическую
+          сцену Pong: чёрный фон, белые прямоугольники. Левая и правая ракетки,
+          мяч. Это мгновенный снимок «живого» процесса, который иллюстрирует
+          базовые принципы 2D-рендеринга и управления. Легко представить, как
+          мяч летает и отскакивает — именно так и работали первые аркадные
+          автоматы.
+        </p>
+      </article>
+    </main>
 
-  <footer>
-    <p>Учебный проект, 2026</p>
-  </footer>
-</body>
+    <footer>
+      <p>Учебный проект, 2026</p>
+    </footer>
+    <script src="/js/auth-check.js"></script>
+    <script src="/js/counter.js"></script>
+    <script src="/js/pong.js"></script>
+    
+  </body>
 </html>
